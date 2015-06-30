@@ -7,10 +7,8 @@ require.config({
     }
 });
 
-require(['jquery','src/todo/todo'],function  ($,Node) {
+require(['jquery','src/todo/appView'],function  ($,AppView) {
 	 $(function  (argument) {
-	     var nd=new Node();
-	     nd.set({list:[1,3,41]});
-	     console.log(nd);
+	     new AppView();
 	 });
 });

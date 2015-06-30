@@ -2,6 +2,9 @@ define(function(require) {
 	var $ = require('jquery');
 	var Backbone = require('backbone/backbone');
 	var Todo = require('./todo');
+
+	require('./localstroage');
+
 	var TodoList = Backbone.Collection.extend({
 		model: Todo,
 		localStorage: new Backbone.LocalStorage("todos-backbone"),
@@ -10,7 +13,7 @@ define(function(require) {
 				done: true
 			});
 		},
-		remain: function() {
+		remaining: function() {
 			return this.where({
 				done: false
 			});
